@@ -3,9 +3,9 @@ import HeroVideo from "@/components/HeroVideo";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import ProductSection from "@/components/ProductSection";
-import CareerSection from "@/components/CareerSection";
 import ContactSection from "@/components/ContactSection";
 import BackToTop from "@/components/BackToTop";
+import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
   return (
@@ -15,9 +15,9 @@ const Index = () => {
       <AboutSection />
       <ServicesSection />
       <ProductSection />
-      <CareerSection />
       <ContactSection />
       <BackToTop />
+      <FooterSection />
     </div>
   );
 };

@@ -21,12 +21,26 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast.success("Your message has been sent. Thank you!");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
+    try {
+      const response = await fetch("http://127.0.0.1:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success("Your message has been sent. Thank you!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast.error("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

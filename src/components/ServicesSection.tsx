@@ -38,6 +38,8 @@ const ServicesSection = () => {
                 src={service.icon}
                 alt={service.title}
                 className="service-icon"
+                loading="lazy"
+                decoding="async"
               />
               <h4 className="font-semibold text-foreground mb-3 text-lg">
                 <a href="#" className="hover:text-primary transition-colors">

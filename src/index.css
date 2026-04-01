@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -120,7 +120,7 @@
   }
 
   .service-card {
-    @apply bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-300 border border-border;
+    @apply bg-card rounded-lg p-6 text-center shadow-sm border border-border hover:bg-primary/10 hover:border-primary transition-colors duration-300;
   }
 
   .service-icon {

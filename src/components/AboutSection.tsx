@@ -16,7 +16,7 @@ const tabs = [
   {
     id: "values",
     title: "CORE VALUES",
-    content: '"We Inspire, Ignite and Innovate", Bridging technology to the nature, we work on new notions, We combine the elements of fundamental study of physics, mathematics, technology and even psychology to create a whole new art experience for our client and customer.\n\nOur primary goal is to create a long term relationship with our clients and customers. We understand client requirement in deep and put complete efforts to meet those requirement.',
+    content: '"We Inspire, Ignite and Innovate", Bridging technology to the nature, we work on new notions, We combine the elements of fundamental study of physics, mathematics, technology and even psychology to create a whole new art experience for our client and customer.\nOur primary goal is to create a long term relationship with our clients and customers. We understand client requirement in deep and put complete efforts to meet those requirement.',
     image: "https://leotechsa.com/assets/img/Corevalue.png",
   },
   {
@@ -67,6 +67,8 @@ const AboutSection = () => {
                 src={activeContent.image}
                 alt={activeContent.title}
                 className="max-w-full h-auto rounded-lg shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

@@ -5,8 +5,19 @@ const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 300);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 300) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -20,15 +31,17 @@ const BackToTop = () => {
     });
   };
 
-  if (!isVisible) return null;
+  if (!isVisible) {
+    return null;
+  }
 
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors duration-200 z-40"
+      className="fixed bottom-8 right-8 z-50 p-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300"
       aria-label="Back to top"
     >
-      <ArrowUp className="w-5 h-5" />
+      <ArrowUp className="w-6 h-6" />
     </button>
   );
 };
